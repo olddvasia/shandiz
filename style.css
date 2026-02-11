@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: linear-gradient(180deg, #0a1224 0%, #0f1c3a 100%);
+    color: #0b1c2d;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(
+            135deg,
+            #0b1c2d 0%,
+            #142b4f 50%,
+            #1e3a8a 100%
+    );
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 15px 60px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #dbeafe;
+}
+
+/* ===== MENU WRAPPER ===== */
+.menu {
+    max-width: 1250px;
+    margin: -40px auto 0;
+    padding: 40px 25px;
+    background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f5f7fb 100%
+    );
+    border-radius: 28px 28px 0 0;
+    box-shadow: 0 -20px 60px rgba(0,0,0,0.35);
+}
+
+/* ===== CATEGORY TITLE ===== */
+h2 {
+    margin: 45px 0 25px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b1c2d;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+            to left,
+            #1e3a8a,
+            rgba(30,58,138,0)
+    );
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 28px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f1f4f9 100%
+    );
+    border-radius: 22px;
+    padding: 16px;
+    text-align: center;
+    box-shadow:
+            0 15px 35px rgba(15,28,58,0.18),
+            inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* نور لوکس بالا کارت */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.6),
+            rgba(255,255,255,0)
+    );
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow:
+            0 25px 55px rgba(15,28,58,0.35);
+}
+.horizontal-scroll {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+section h2 {
+    scroll-margin-top: 120px;
+}
+
+
+.card .sizes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.card .sizes span {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    box-shadow: 0 4px 10px rgba(37,99,235,0.25);
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.horizontal-scroll .card {
+    min-width: 230px;
+    scroll-snap-align: start;
+}
+
+
+.card img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 12px;
+}
+.section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 14px;
+    background: linear-gradient(90deg, #0b1c2d, #142b4f);
+}
+
+.section-nav button {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s ease;
+}
+
+.section-nav button:hover {
+    background: white;
+    color: #0b1c2d;
+}
+
+/* ===== TITLE ===== */
+.card h3 {
+    margin: 10px 0 6px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0b1c2d;
+}
+
+/* ===== PRICE ===== */
+.card span {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(
+            135deg,
+            #1e3a8a,
+            #2563eb
+    );
+    box-shadow: 0 6px 15px rgba(37,99,235,0.35);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    .menu {
+        padding: 30px 18px;
+    }
+}
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(90deg, #0b1c2d, #142b4f);
+    color: white;
+    font-weight: 500;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
